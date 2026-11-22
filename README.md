@@ -6,8 +6,6 @@ O projeto nasceu de um tablet educacional do MEC que estava parado. Em vez de co
 
 ![Foto do projeto](docs/foto.jpg)
 
-> Adicione sua foto em `docs/foto.jpg`. Evite mostrar abas do navegador, IPs ou dados pessoais na imagem.
-
 ## ✨ Recursos
 
 - **CPU**: uso total em medidor circular, gráfico dos últimos 60 s e barra por núcleo.
@@ -57,18 +55,18 @@ O projeto nasceu de um tablet educacional do MEC que estava parado. Em vez de co
 
 ## 🚀 Instalação
 
-1. **Clone ou baixe** este repositório para uma pasta, por exemplo `C:\monitor`.
+1. **Clone ou baixe** este repositório para uma pasta qualquer.
 2. **Instale a dependência:**
    ```bash
-   pip install psutil
+   py -m pip install -r requirements.txt
    ```
 3. **GPU AMD/Intel:** abra o LibreHardwareMonitor **como administrador** e ative em
    *Options → Remote Web Server → Run*. Deixe-o aberto. Para conferir, abra `http://localhost:8085/data.json` no navegador do PC.
-4. **FPS (opcional):** baixe o PresentMon na [página de releases](https://github.com/GameTechDev/PresentMon/releases), renomeie para `PresentMon.exe` e coloque em `C:\monitor\`.
+4. **FPS (opcional):** baixe o PresentMon na [página de releases](https://github.com/GameTechDev/PresentMon/releases), renomeie para `PresentMon.exe` e coloque **na mesma pasta do `monitor.py`** (o arquivo não vem no repositório).
 5. **Rode como administrador** (necessário para o PresentMon):
    ```bash
-   cd C:\monitor
-   python monitor.py
+   cd caminho\da\pasta
+   py monitor.py
    ```
 6. **Descubra o IP do PC** com `ipconfig` (campo *Endereço IPv4*).
 7. **No tablet**, abra no navegador:
@@ -85,7 +83,7 @@ As opções ficam no topo do `monitor.py`:
 | `PORTA` | Porta do servidor | `8000` |
 | `DISCO` | Disco monitorado | `C:\` |
 | `LHM_URL` | Endereço do LibreHardwareMonitor | `http://127.0.0.1:8085/data.json` |
-| `PRESENTMON` | Caminho do `PresentMon.exe` | `C:\monitor\PresentMon.exe` |
+| `PRESENTMON` | Caminho do `PresentMon.exe` | `PresentMon.exe` na pasta do script |
 | `JOGO` | Fixa o FPS em um programa (ex.: `"eldenring.exe"`). Vazio detecta sozinho | `""` |
 | `N` | Segundos de histórico nos gráficos | `60` |
 
@@ -111,6 +109,10 @@ As opções ficam no topo do `monitor.py`:
 
 **A temperatura ou o consumo não aparecem**
 - Abra `http://localhost:8085/data.json`, confira os nomes dos sensores da sua GPU e ajuste a função `le_gpu_lhm()`.
+
+## 🎮 Jogos com anti-cheat
+
+O LibreHardwareMonitor usa um driver de baixo nível para ler os sensores, e anti-cheats de nível de kernel (Easy Anti-Cheat, BattlEye, Vanguard, EA anticheat) podem reagir a esse tipo de programa. **Antes de jogar online em jogos com anti-cheat, feche o LibreHardwareMonitor e o PresentMon.** O painel continua mostrando CPU, RAM, disco e rede. Não há garantia de que nenhum jogo vá reclamar; use por sua conta e risco.
 
 ## ⚠️ Segurança
 
