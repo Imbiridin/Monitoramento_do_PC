@@ -113,7 +113,7 @@ def thread_fps():
     if not os.path.exists(PRESENTMON):
         fps["msg"] = "PresentMon não encontrado em " + PRESENTMON
         return
-    cmd = [PRESENTMON, "--output_stdout", "--no_console_stats", "--v1_metrics", "--session_name", "monitor_pc"]
+    cmd = [PRESENTMON, "--output_stdout", "--no_console_stats", "--v1_metrics", "--stop_existing_session", "--session_name", "monitor_pc"]
     if JOGO:
         cmd += ["--process_name", JOGO]
     try:
