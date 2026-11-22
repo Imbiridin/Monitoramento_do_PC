@@ -21,7 +21,7 @@ NVSMI = shutil.which("nvidia-smi")
 if not NVSMI and os.path.exists(r"C:\Program Files\NVIDIA Corporation\NVSMI\nvidia-smi.exe"):
     NVSMI = r"C:\Program Files\NVIDIA Corporation\NVSMI\nvidia-smi.exe"
 # FPS: usa o PresentMon (baixe em github.com/GameTechDev/PresentMon/releases) e coloque aqui:
-PRESENTMON = r"C:\monitor\PresentMon.exe"
+PRESENTMON = r"C:\Users\marco\OneDrive\Documents\tablet t77\PresentMon.exe"
 # Se quiser fixar um jogo, escreva o nome do .exe (ex.: "eldenring.exe"). Vazio = detecta sozinho.
 JOGO = ""
 SEM_JANELA = 0x08000000 if os.name == "nt" else 0
